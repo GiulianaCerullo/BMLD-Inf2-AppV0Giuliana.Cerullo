@@ -68,3 +68,5 @@ Vor dem Praktikum wiederholt sie gezielt die wichtigsten Inhalte.
 
 9. Zitat (macht Persona greifbar)
 „Ich brauche etwas, das mir die Bakterien schnell und visuell erklärt – sonst bleibt einfach nichts hängen.“
+
+![Matilda Huber](https://github.com/GiulianaCerullo/BMLD-Inf2-AppV0Giuliana.Cerullo/blob/main/docs/picture/MatildaHuberInformatik.jpeg)
