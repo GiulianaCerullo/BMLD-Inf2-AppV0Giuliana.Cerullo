@@ -65,6 +65,8 @@ Zwischen den Vorlesungen hat sie wenig Zeit, daher lernt sie in kurzen Einheiten
 Am Nachmittag geht sie ins Gym und nutzt die Zeit auf dem Laufband, um mit der App zu lernen.
 Vor dem Praktikum wiederholt sie gezielt die wichtigsten Inhalte.
 
+Hallo
+
 **9. Zitat**
 * „Ich brauche etwas, das mir die Bakterien schnell und visuell erklärt – sonst bleibt einfach nichts hängen.“
 
