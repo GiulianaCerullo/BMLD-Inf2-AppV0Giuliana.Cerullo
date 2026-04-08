@@ -1,6 +1,7 @@
 Studentin (Matilda), 22 Jahre alt, studiert BMLD im zweiten 2. Semester. 
 
 Persona: Matilda Huber
+
 **1. Problem & Bedürfnis**
 Matilda hat Schwierigkeiten, sich die komplexe Bakterieneinteilung (z. B. grampositiv/gramnegativ, Formen, Eigenschaften) langfristig zu merken.
 Im Studium muss sie dieses Wissen schnell abrufen können – insbesondere vor Praktika und Tests.
