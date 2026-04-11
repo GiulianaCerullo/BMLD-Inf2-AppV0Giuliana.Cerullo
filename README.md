@@ -1,9 +1,4 @@
-# BMLD-Inf2-AppV0
-
-Das leere Gerüst um eine App aufzubauen.
-
-## Autor
-
-Samuel Wehrli (wehs@zhaw.ch)
+# Bakterien Identifikation und Lern App
+Diese App dient zur Identifikation verschiedener Bakterien anhand von unterschiedlichen Test und Mermalen der Bakterien. Ausserdem gibt es einen Lern-Modus für Studentinnen und Studenten.
 
 
