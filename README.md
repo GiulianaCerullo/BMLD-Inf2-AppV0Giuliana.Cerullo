@@ -3,7 +3,7 @@ Diese App dient zur Identifikation verschiedener Bakterien anhand von unterschie
 
 Autoren:
 - Sara Durrer (durresar@students.zhaw.ch)
-- Giuliana Cerullo (cerlgiu@students.zhaw.ch)
+- Giuliana Cerullo (cerulgiu@students.zhaw.ch)
 - Ladina Lozza (lozzalad@students.zhaw.ch)
 - Alessandro Zandt (zandtale@students.zhaw.ch)
 
