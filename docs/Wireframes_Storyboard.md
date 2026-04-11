@@ -11,3 +11,11 @@
 ![alt text](<Bild 6.0.jpg>)
 
 ![alt text](<Bild 7.0.jpg>)
+
+![alt text](<Bild 8.0 .jpg>) 
+
+![alt text](<Bild 9.0.jpg>) 
+
+![alt text](<Bild 10.0.jpg>) 
+
+![alt text](<Bild 11.0.jpg>)
