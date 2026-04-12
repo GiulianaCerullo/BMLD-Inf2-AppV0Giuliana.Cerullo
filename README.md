@@ -6,5 +6,6 @@ Autoren:
 - Giuliana Cerullo (cerulgiu@students.zhaw.ch)
 - Ladina Lozza (lozzalad@students.zhaw.ch)
 - Alessandro Zandt (zandtale@students.zhaw.ch)
+- Test
 
 
