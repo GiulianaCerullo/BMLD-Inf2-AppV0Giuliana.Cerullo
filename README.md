@@ -3,7 +3,7 @@
 Diese App dient zur Identifikation verschiedener Bakterien anhand von unterschiedlichen Tests und Merkmalen der Bakterien. Außerdem gibt es einen Lern-Modus für Studentinnen und Studenten.
 
 ## 🔍 Problemstellung
-Eine grosse Herausforderung für Studierenden ist die Einteilung von Bakterien in verschiedene Kategorien, wie z. B. grampositiv/-negativ oder Katalase positiv/negativ. Klassische Lernmethoden wie Skripte lesen oder Powerpointfolien durchklicken sind oft zeitintensiv und meist unübersichtlich.
+Eine grosse Herausforderung für Studierende ist die Einteilung von Bakterien in verschiedene Kategorien, wie z. B. grampositiv/-negativ oder Katalase positiv/negativ. Klassische Lernmethoden wie Skripte lesen oder Powerpoint-Folien durchklicken sind oft zeitintensiv und meist unübersichtlich.
 
 ## 🎯 Ziele der App
 - Schnelles und effizientes Lernen der Bakterieneinteilung ermöglichen
@@ -34,6 +34,5 @@ Eine grosse Herausforderung für Studierenden ist die Einteilung von Bakterien i
 - Giuliana Cerullo (cerulgiu@students.zhaw.ch)
 - Ladina Lozza (lozzalad@students.zhaw.ch)
 - Alessandro Zandt (zandtale@students.zhaw.ch)
--
 
 
