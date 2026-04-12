@@ -8,17 +8,16 @@ Eine grosse Herausforderung für Studierenden ist die Einteilung von Bakterien i
 ## 🎯 Ziele der App
 - Schnelles und effizientes Lernen der Bakterieneinteilung ermöglichen
 - Verständnis durch visuelle Darstellung der Bakterien verbessern
-- Wissen langfristig speichern und abrufbar machen
+- Kurze Erklärungen der einzelnen Tests
 - Vorbereitung auf Praktika erleichtern
 - Lernen flexibel in den Alltag integrieren
 
 ## ⚙️ Funktionen der App
-- **Strukturierter Lernaufbau**: Die Nutzer beginnen mit dem Gramverhalten (grampositiv oder gramnegativ) und arbeiten sich zu weiteren Eigenschaften wie Katalase- oder Laktoseverhalten vor.
-- **Interaktive Quizze**: Zur Wiederholung der Bakterieneinteilung.
-- **Zuordnungsübungen**: Zu Kategorien wie Gramverhalten, Katalase, Laktoseverhalten usw.
+- **Strukturierter Lernaufbau**: 
+- Bakterien Identifikation -> Die Nutzer beginnen mit dem Gramverhalten (grampositiv oder gramnegativ) und arbeiten sich zu weiteren Eigenschaften wie Katalase- oder Laktoseverhalten vor. 
+- Lernmodus -> Die Nutzer lernen und identifizieren die Bakterien. Dazu wird angezeigt, wie viel Prozent richtig waren. Die Prozente werden gespeichert, um einen Fortschritt erkennen zu können.
 
 ## 📱 Nutzung im Alltag
-*(Hier könntest du einen Absatz oder Liste hinzufügen, z.B.:)*
 - Kurze Lernsessions während der Pendelzeit.
 - Schnelle Wiederholungen vor Praktika.
 - Flexibles Lernen ohne feste Zeiten.
