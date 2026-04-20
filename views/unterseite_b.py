@@ -65,7 +65,7 @@ st.markdown("""
 <div class="custom-card">
     <h1>Gram-negative Bakterien identifizieren</h1>
     <p class="small-note">
-        Wähle Schritt für Schritt die passenden Merkmale aus, um grampositive Bakterien einzuordnen.
+        Wähle Schritt für Schritt die passenden Merkmale aus, um gramnegative Bakterien einzuordnen.
     </p>
 </div>
 """, unsafe_allow_html=True)
