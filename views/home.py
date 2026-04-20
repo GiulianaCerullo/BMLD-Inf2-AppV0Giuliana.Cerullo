@@ -3,6 +3,18 @@ import streamlit as st
 st.title("Meine erste Streamlit App")
 
 # !! WICHTIG: Eure Emails müssen in der App erscheinen!!
+import streamlit as st
+
+st.title("Bakterienidentifikation")
+st.write("Willkommen in unserer App zur bakteriellen Identifikation.")
+
+st.subheader("Inhalt der App")
+st.write("- Gram-positive Bakterien identifizieren")
+st.write("- Gram-negative Bakterien identifizieren")
+st.write("- Testbeschreibungen zur Identifizierung")
+st.write("- Bakterien lernen")
+
+st.subheader("Projektteam")
 
 """
 Diese App wurde von folgenden Personen entwickelt:
