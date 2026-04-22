@@ -1,9 +1,11 @@
 import streamlit as st
 
+st.set_page_config(page_title="Steckbriefe von Bakterien", layout="centered")
+
 st.markdown("""
 <style>
 .stApp {
-    background-color: #FFD8B1;
+    background-color: #FFF1DC;
 }
 
 .block-container {
@@ -44,11 +46,13 @@ div[data-testid="stRadio"] > label {
 }
 
 .small-note {
-    color: #5c7380;
+    color: #C08457;
     font-size: 0.95rem;
+    text-decoration: none;
 }
 </style>
 """, unsafe_allow_html=True)
+
 st.markdown("""
 <div class="custom-card">
     <h1>Bakterien Steckbriefe</h1>
@@ -57,6 +61,5 @@ st.markdown("""
     </p>
 </div>
 """, unsafe_allow_html=True)
-
 
 st.write("Hier könnte jetzt dein Menü oder die erste Auswahl kommen.")
