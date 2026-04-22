@@ -2,8 +2,6 @@
 import streamlit as st
 import streamlit as st
 
-st.set_page_config(page_title="App für die bakterille Identifikation, Beschreibungstexte und Lernmodus", layout="centered")
-
 st.markdown("""
 <style>
 .stApp {
