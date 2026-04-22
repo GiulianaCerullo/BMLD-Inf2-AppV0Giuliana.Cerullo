@@ -1,7 +1,5 @@
 import streamlit as st
 
-st.set_page_config(page_title="Gram-negative Bakterien", layout="centered")
-
 st.markdown("""
 <style>
 .stApp {
