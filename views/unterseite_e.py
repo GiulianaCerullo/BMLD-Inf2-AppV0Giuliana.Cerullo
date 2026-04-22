@@ -5,7 +5,7 @@ st.set_page_config(page_title="Steckbriefe von Bakterien", layout="centered")
 st.markdown("""
 <style>
 .stApp {
-    background-color: #FFC0CB;
+    background-color: #FFD8B1;
 }
 
 .block-container {
@@ -60,13 +60,5 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-st.markdown("""
-<div class="custom-card">
-    <h1>Bakterien Steckbriefe</h1>
-    <p class="small-note">
-        Hier wird dir jedes Bakterium mit einem Steckbrief beschrieben, damit du die wichtigsten Informationen auf einen Blick hast. 
-    </p>
-</div>
-""", unsafe_allow_html=True)
 
 st.write("Hier könnte jetzt dein Menü oder die erste Auswahl kommen.")
