@@ -1,6 +1,5 @@
 # !! WICHTIG: Eure Emails müssen in der App erscheinen!!
 import streamlit as st
-import streamlit as st
 
 st.markdown("""
 <style>
