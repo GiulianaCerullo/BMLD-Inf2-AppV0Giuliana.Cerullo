@@ -53,7 +53,7 @@ div[data-testid="stRadio"] > label {
 
 st.markdown("""
 <div class="custom-card">
-    <h1>App für die bakterille Identifikation, Beschreibungstexte und Lernmodus</h1>
+    <h1>App für die bakterielle Identifikation, Beschreibungstexte und Lernmodus</h1>
     <p class="small-note">
     </p>
 </div>
