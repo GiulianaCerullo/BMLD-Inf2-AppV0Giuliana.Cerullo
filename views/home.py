@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 import streamlit as st
 from pathlib import Path
 from PIL import Image
+=======
+# !! WICHTIG: Eure Emails müssen in der App erscheinen!!
+import streamlit as st
+>>>>>>> 4f027576614f418aca5833c9a1107a1803101596
 
 st.set_page_config(page_title="Startseite", layout="centered")
 
@@ -40,7 +45,12 @@ h1, h2, h3 {
 st.markdown("""
 <div class="custom-card">
     <h1>App für die bakterielle Identifikation, Beschreibungstexte und Lernmodus</h1>
+<<<<<<< HEAD
     <p class="small-note"></p>
+=======
+    <p class="small-note">
+    </p>
+>>>>>>> 4f027576614f418aca5833c9a1107a1803101596
 </div>
 """, unsafe_allow_html=True)
 
@@ -103,5 +113,13 @@ Diese App wurde von folgenden Personen entwickelt:
 - Giuliana Cerullo (cerulgiu@students.zhaw.ch)
 - Ladina Lozza (lozzalad@students.zhaw.ch)
 
+<<<<<<< HEAD
 Dozent: Samuel Wehrli (wehs@zhaw.ch)
 """)
+=======
+Lehrpersonen: 
+- Samuel Wehrli (wehs@zhaw.ch)
+- Paul Fox (foxp@zhaw.ch)
+- Ka Men Ho (hokam001@students.zhaw.ch)
+"""
+>>>>>>> 4f027576614f418aca5833c9a1107a1803101596

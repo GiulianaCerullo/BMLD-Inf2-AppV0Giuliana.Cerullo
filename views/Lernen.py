@@ -1,4 +1,8 @@
 import streamlit as st
+import pandas as pd
+
+from utils.data_manager import DataManager
+data_manager = DataManager()
 
 st.markdown("""
 <style>
@@ -220,10 +224,16 @@ if aktuelle_nummer < anzahl_fragen:
             st.rerun()
 
     st.info(f"Punktestand: {st.session_state.punkte} / {anzahl_fragen}")
-
 else:
     st.success(f"Quiz beendet! Du hast {st.session_state.punkte} von {anzahl_fragen} Punkten erreicht.")
 
+    # Ergebnis berechnen (einfach ohne Extra-Funktion)
+    result = {
+        "result": st.session_state.punkte / anzahl_fragen,
+        "timestamp": pd.Timestamp.now()
+    }
+    
+    # Feedback
     if st.session_state.punkte == anzahl_fragen:
         st.balloons()
         st.write("Super gemacht!")
@@ -232,9 +242,29 @@ else:
     else:
         st.write("Weiter üben lohnt sich.")
 
+    st.write(f"Dein Ergebnis: {result['result']:.2f}")
+    
+    # Neustart
     if st.button("Quiz neu starten"):
         st.session_state.frage_index = 0
         st.session_state.punkte = 0
         st.session_state.beantwortet = False
         st.session_state.feedback = ""
         st.rerun()
+
+    st.write(f"Berechnet am: {result['timestamp']}")
+
+    # DataFrame erweitern
+    st.session_state["data_df"] = pd.concat([
+        st.session_state["data_df"],
+        pd.DataFrame([{
+            "punkte": st.session_state.punkte,
+            "anzahl_fragen": anzahl_fragen,
+            "result": result["result"],
+            "timestamp": result["timestamp"]
+        }])
+    ], ignore_index=True)
+
+    # Data speichern
+    data_manager = DataManager()
+    data_manager.save_user_data(st.session_state["data_df"], 'data.csv')
