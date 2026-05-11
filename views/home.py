@@ -109,8 +109,10 @@ Diese App wurde von folgenden Personen entwickelt:
 
 Dozent: Samuel Wehrli (wehs@zhaw.ch)
 """)
-Lehrpersonen: 
+
+st.markdown("""
+Lehrpersonen:
 - Samuel Wehrli (wehs@zhaw.ch)
 - Paul Fox (foxp@zhaw.ch)
 - Ka Men Ho (hokam001@students.zhaw.ch)
-"""
+""")
