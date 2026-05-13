@@ -1,4 +1,16 @@
+"""Streamlit-Seite zur schrittweisen Identifikation grampositiver Bakterien."""
+
 import streamlit as st
+
+from utils.bakterien_bilder import zeige_bakterienbilder
+
+
+def zeige_ergebnis(text: str, bakteriennamen: list[str]) -> None:
+    """Zeigt das Identifikationsergebnis mit passenden Bakterienbildern an."""
+    st.success(text)
+    zeige_bakterienbilder(bakteriennamen)
+    st.write("Dieser Pfad ist fertig.")
+
 
 st.markdown("""
 <style>
@@ -78,7 +90,7 @@ reset_keys = [
     "alpha_typ",
     "beta_typ",
     "sauerstoff_bazillen",
-    "sauerstoff_faden"
+    "sauerstoff_faden",
 ]
 
 if st.button("Alles zurücksetzen"):
@@ -91,7 +103,7 @@ morphologie = st.radio(
     "Wähle die Morphologie:",
     ["Kokken", "Bazillen", "fadenförmige Bakterien"],
     key="morphologie",
-    index=None
+    index=None,
 )
 
 if morphologie == "Kokken":
@@ -102,7 +114,7 @@ if morphologie == "Kokken":
         "Wie ist der Katalase-Test?",
         ["Katalase positiv", "Katalase negativ"],
         key="katalase",
-        index=None
+        index=None,
     )
 
     if katalase == "Katalase positiv":
@@ -115,14 +127,14 @@ if morphologie == "Kokken":
             "Wie ist der Koagulase-Test?",
             ["Koagulase positiv", "Koagulase negativ"],
             key="koagulase",
-            index=None
+            index=None,
         )
 
         if koagulase == "Koagulase positiv":
-            st.success("""
-Bakterium: S. aureus
-""")
-            st.write("Dieser Pfad ist fertig.")
+            zeige_ergebnis(
+                "Bakterium: S. aureus",
+                ["S. aureus"],
+            )
 
         elif koagulase == "Koagulase negativ":
             if "novobiocin" not in st.session_state:
@@ -132,20 +144,20 @@ Bakterium: S. aureus
                 "Wie ist der Novobiocin-Test?",
                 ["Novobiocin empfindlich", "Novobiocin resistent"],
                 key="novobiocin",
-                index=None
+                index=None,
             )
 
             if novobiocin == "Novobiocin empfindlich":
-                st.success("""
-Bakterium: S. epidermidis
-""")
-                st.write("Dieser Pfad ist fertig.")
+                zeige_ergebnis(
+                    "Bakterium: S. epidermidis",
+                    ["S. epidermidis"],
+                )
 
             elif novobiocin == "Novobiocin resistent":
-                st.success("""
-Bakterium: S. saprophyticus
-""")
-                st.write("Dieser Pfad ist fertig.")
+                zeige_ergebnis(
+                    "Bakterium: S. saprophyticus",
+                    ["S. saprophyticus"],
+                )
 
     elif katalase == "Katalase negativ":
         if "kettenform" not in st.session_state:
@@ -155,7 +167,7 @@ Bakterium: S. saprophyticus
             "Wie liegen die Kokken vor?",
             ["lange/paar Ketten", "kurze Ketten"],
             key="kettenform",
-            index=None
+            index=None,
         )
 
         if kettenform == "lange/paar Ketten":
@@ -166,7 +178,7 @@ Bakterium: S. saprophyticus
                 "Welche Hämolyse liegt vor?",
                 ["alpha-Hämolyse", "beta-Hämolyse", "gamma-Hämolyse"],
                 key="haemolyse",
-                index=None
+                index=None,
             )
 
             if haemolyse == "alpha-Hämolyse":
@@ -177,23 +189,22 @@ Bakterium: S. saprophyticus
                     "Wie stark ist die alpha-Hämolyse?",
                     ["starke alpha-Hämolyse", "leichte alpha-Hämolyse"],
                     key="alpha_typ",
-                    index=None
+                    index=None,
                 )
 
                 if alpha_typ == "starke alpha-Hämolyse":
-                    st.success("""
-Bakterium: S. pneumoniae  
-Merkmal: Kapselbildung
-""")
-                    st.write("Dieser Pfad ist fertig.")
+                    zeige_ergebnis(
+                        "Bakterium: S. pneumoniae\n\nMerkmal: Kapselbildung",
+                        ["S. pneumoniae"],
+                    )
 
                 elif alpha_typ == "leichte alpha-Hämolyse":
-                    st.success("""
-Bakteriengruppe: vergrünende Bakterien (Viridans streptococci)  
-Beispiele: S. mutans oder S. mitis  
-Merkmal: keine Kapselbildung
-""")
-                    st.write("Dieser Pfad ist fertig.")
+                    zeige_ergebnis(
+                        "Bakteriengruppe: vergrünende Streptokokken\n\n"
+                        "Beispiele: S. mutans oder S. mitis\n\n"
+                        "Merkmal: keine Kapselbildung",
+                        ["S. mutans"],
+                    )
 
             elif haemolyse == "beta-Hämolyse":
                 if "beta_typ" not in st.session_state:
@@ -203,33 +214,33 @@ Merkmal: keine Kapselbildung
                     "Wie stark ist die beta-Hämolyse?",
                     ["viel beta-Hämolyse", "wenig beta-Hämolyse"],
                     key="beta_typ",
-                    index=None
+                    index=None,
                 )
 
                 if beta_typ == "viel beta-Hämolyse":
-                    st.success("""
-Bakterium: S. pyogenes
-""")
-                    st.write("Dieser Pfad ist fertig.")
+                    zeige_ergebnis(
+                        "Bakterium: S. pyogenes",
+                        ["S. pyogenes"],
+                    )
 
                 elif beta_typ == "wenig beta-Hämolyse":
-                    st.success("""
-Bakterium: S. agalactiae
-""")
-                    st.write("Dieser Pfad ist fertig.")
+                    zeige_ergebnis(
+                        "Bakterium: S. agalactiae",
+                        ["S. agalactiae"],
+                    )
 
             elif haemolyse == "gamma-Hämolyse":
-                st.success("""
-Bakterium: S. bovis
-""")
-                st.write("Dieser Pfad ist fertig.")
+                zeige_ergebnis(
+                    "Bakterium: S. bovis",
+                    ["S. bovis"],
+                )
 
         elif kettenform == "kurze Ketten":
-            st.success("""
-Bakteriengruppe: Enterococcus  
-Beispiele: E. faecium, E. faecalis
-""")
-            st.write("Dieser Pfad ist fertig.")
+            zeige_ergebnis(
+                "Bakteriengruppe: Enterococcus\n\n"
+                "Beispiele: E. faecium, E. faecalis",
+                ["E. faecium", "E. faecalis"],
+            )
 
 elif morphologie == "Bazillen":
     if "sauerstoff_bazillen" not in st.session_state:
@@ -239,22 +250,22 @@ elif morphologie == "Bazillen":
         "Wie ist das Sauerstoffverhalten?",
         ["anaerob", "aerob"],
         key="sauerstoff_bazillen",
-        index=None
+        index=None,
     )
 
     if sauerstoff == "anaerob":
-        st.success("""
-Bakteriengruppe: anaerobe Bazillen  
-Beispiele: Clostridium, Cutibacterium
-""")
-        st.write("Dieser Pfad ist fertig.")
+        zeige_ergebnis(
+            "Bakteriengruppe: anaerobe Bazillen\n\n"
+            "Beispiele: Clostridium, Cutibacterium",
+            ["Clostridium", "Cutibacterium acnes"],
+        )
 
     elif sauerstoff == "aerob":
-        st.success("""
-Bakteriengruppe: aerobe Bazillen  
-Beispiele: Listeria, Bacillus, Corynebakterium
-""")
-        st.write("Dieser Pfad ist fertig.")
+        zeige_ergebnis(
+            "Bakteriengruppe: aerobe Bazillen\n\n"
+            "Beispiele: Listeria, Bacillus, Corynebakterium",
+            ["Listeria", "Bacillus", "Corynebakterium"],
+        )
 
 elif morphologie == "fadenförmige Bakterien":
     if "sauerstoff_faden" not in st.session_state:
@@ -264,19 +275,19 @@ elif morphologie == "fadenförmige Bakterien":
         "Wie ist das Sauerstoffverhalten?",
         ["anaerob", "aerob"],
         key="sauerstoff_faden",
-        index=None
+        index=None,
     )
 
     if sauerstoff == "anaerob":
-        st.success("""
-Bakteriengruppe: anaerobe fadenförmige Bakterien  
-Beispiel: Actinomyces
-""")
-        st.write("Dieser Pfad ist fertig.")
+        zeige_ergebnis(
+            "Bakteriengruppe: anaerobe fadenförmige Bakterien\n\n"
+            "Beispiel: Actinomyces",
+            ["Actinomyces"],
+        )
 
     elif sauerstoff == "aerob":
-        st.success("""
-Bakteriengruppe: aerobe fadenförmige Bakterien  
-Beispiel: Nocardia
-""")
-        st.write("Dieser Pfad ist fertig.")
+        zeige_ergebnis(
+            "Bakteriengruppe: aerobe fadenförmige Bakterien\n\n"
+            "Beispiel: Nocardia",
+            ["Nocardia"],
+        )
