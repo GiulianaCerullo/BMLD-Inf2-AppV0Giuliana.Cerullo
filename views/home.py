@@ -4,7 +4,7 @@ from PIL import Image
 # !! WICHTIG: Eure Emails müssen in der App erscheinen!!
 import streamlit as st
 
-st.set_page_config(page_title="Startseite", layout="centered")
+st.title="Startseite"
 
 # ---------- Styling ----------
 st.markdown("""
@@ -106,8 +106,6 @@ Diese App wurde von folgenden Personen entwickelt:
 - Alessandro Zandt (zandtale@students.zhaw.ch)
 - Giuliana Cerullo (cerulgiu@students.zhaw.ch)
 - Ladina Lozza (lozzalad@students.zhaw.ch)
-
-Dozent: Samuel Wehrli (wehs@zhaw.ch)
 """)
 
 st.markdown("""
