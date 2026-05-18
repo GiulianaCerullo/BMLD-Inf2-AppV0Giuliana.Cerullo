@@ -1,4 +1,16 @@
+"""Streamlit-Seite zur schrittweisen Identifikation gramnegativer Bakterien."""
+
 import streamlit as st
+
+from utils.bakterien_bilder import zeige_bakterienbilder
+
+
+def zeige_ergebnis(text: str, bakteriennamen: list[str]) -> None:
+    """Zeigt das Identifikationsergebnis mit passenden Bakterienbildern an."""
+    st.success(text)
+    zeige_bakterienbilder(bakteriennamen)
+    st.write("Dieser Pfad ist fertig.")
+
 
 st.markdown("""
 <style>
@@ -89,7 +101,7 @@ morphologie = st.radio(
     "Wähle die Morphologie:",
     ["Diplokokken", "Bazillen", "gekrümmte Bakterien", "Kokkenbazillen"],
     key="morphologie_gn",
-    index=None
+    index=None,
 )
 
 if morphologie == "Diplokokken":
@@ -106,20 +118,20 @@ Gemeinsame Eigenschaften:
         "Wird Maltose verwertet?",
         ["Maltose-Verwertung", "keine Maltose-Verwertung"],
         key="maltose",
-        index=None
+        index=None,
     )
 
     if maltose == "Maltose-Verwertung":
-        st.success("""
-Bakterium: N. meningitidis
-""")
-        st.write("Dieser Pfad ist fertig.")
+        zeige_ergebnis(
+            "Bakterium: N. meningitidis",
+            ["N. meningitidis"],
+        )
 
     elif maltose == "keine Maltose-Verwertung":
-        st.success("""
-Bakterien: N. gonorrhoeae, Moraxella
-""")
-        st.write("Dieser Pfad ist fertig.")
+        zeige_ergebnis(
+            "Bakterien: N. gonorrhoeae, Moraxella",
+            ["N. gonorrhoeae", "Moraxella catarrhalis"],
+        )
 
 elif morphologie == "Bazillen":
     if "sauerstoff_bazillen_gn" not in st.session_state:
@@ -129,15 +141,15 @@ elif morphologie == "Bazillen":
         "Wie ist das Sauerstoffverhalten?",
         ["anaerob", "aerob"],
         key="sauerstoff_bazillen_gn",
-        index=None
+        index=None,
     )
 
     if sauerstoff == "anaerob":
-        st.success("""
-Bakteriengruppe: anaerobe gramnegative Bazillen
-Beispiele: Bacteroides, Fusobakterien
-""")
-        st.write("Dieser Pfad ist fertig.")
+        zeige_ergebnis(
+            "Bakteriengruppe: anaerobe gramnegative Bazillen\n\n"
+            "Beispiele: Bacteroides, Fusobakterien",
+            ["Bacteroides", "Fusobakterien"],
+        )
 
     elif sauerstoff == "aerob":
         if "laktose" not in st.session_state:
@@ -147,7 +159,7 @@ Beispiele: Bacteroides, Fusobakterien
             "Wird Laktose verwertet?",
             ["Laktose-Verwertung", "keine Laktose-Verwertung"],
             key="laktose",
-            index=None
+            index=None,
         )
 
         if laktose == "Laktose-Verwertung":
@@ -158,20 +170,20 @@ Beispiele: Bacteroides, Fusobakterien
                 "Wie ist das Oxidase-Verhalten?",
                 ["oxidase negativ (schnell)", "oxidase negativ (langsam)"],
                 key="oxidase_laktose",
-                index=None
+                index=None,
             )
 
             if oxidase_laktose == "oxidase negativ (schnell)":
-                st.success("""
-Bakterien: E. coli, Klebsiella, Enterobacter
-""")
-                st.write("Dieser Pfad ist fertig.")
+                zeige_ergebnis(
+                    "Bakterien: E. coli, Klebsiella, Enterobacter",
+                    ["E. coli", "Klebsiella oxytoca", "Enterobacter cloacae"],
+                )
 
             elif oxidase_laktose == "oxidase negativ (langsam)":
-                st.success("""
-Bakterien: Citrobacter, Serratia
-""")
-                st.write("Dieser Pfad ist fertig.")
+                zeige_ergebnis(
+                    "Bakterien: Citrobacter, Serratia",
+                    ["Citrobacter freundii", "Serratia liquefaciens"],
+                )
 
         elif laktose == "keine Laktose-Verwertung":
             if "oxidase_keine_laktose" not in st.session_state:
@@ -181,15 +193,19 @@ Bakterien: Citrobacter, Serratia
                 "Wie ist das Oxidase-Verhalten?",
                 ["oxidase positiv", "oxidase negativ"],
                 key="oxidase_keine_laktose",
-                index=None
+                index=None,
             )
 
             if oxidase_keine_laktose == "oxidase positiv":
-                st.success("""
-Bakterien: Pseudomonas, Legionella, Burkholderia
-Merkmal: Non-Fermenter
-""")
-                st.write("Dieser Pfad ist fertig.")
+                zeige_ergebnis(
+                    "Bakterien: Pseudomonas, Legionella, Burkholderia\n\n"
+                    "Merkmal: Non-Fermenter",
+                    [
+                        "Pseudomonas aeruginosa",
+                        "Legionella pneumophila",
+                        "Burkholderia cepacia",
+                    ],
+                )
 
             elif oxidase_keine_laktose == "oxidase negativ":
                 if "h2s" not in st.session_state:
@@ -199,20 +215,20 @@ Merkmal: Non-Fermenter
                     "Liegt eine H2S-Produktion auf TSI-Agar vor?",
                     ["H2S-Produktion auf TSI-Agar", "keine H2S-Produktion auf TSI-Agar"],
                     key="h2s",
-                    index=None
+                    index=None,
                 )
 
                 if h2s == "H2S-Produktion auf TSI-Agar":
-                    st.success("""
-Bakterien: Salmonella, Proteus
-""")
-                    st.write("Dieser Pfad ist fertig.")
+                    zeige_ergebnis(
+                        "Bakterien: Salmonella, Proteus",
+                        ["Salmonella typhimurium", "Proteus vulgaris"],
+                    )
 
                 elif h2s == "keine H2S-Produktion auf TSI-Agar":
-                    st.success("""
-Bakterien: Shigella, Yersinia
-""")
-                    st.write("Dieser Pfad ist fertig.")
+                    zeige_ergebnis(
+                        "Bakterien: Shigella, Yersinia",
+                        ["Shigella dysenteriae", "Yersinia"],
+                    )
 
 elif morphologie == "gekrümmte Bakterien":
     st.info("""
@@ -229,36 +245,44 @@ Gemeinsame Eigenschaften:
         "Welches Zusatzmerkmal liegt vor?",
         ["Wachstum bei 42°C", "Wachstum im alkalischen Medium", "produziert Urease"],
         key="gekruemmt",
-        index=None
+        index=None,
     )
 
     if gekruemmt == "Wachstum bei 42°C":
-        st.success("""
-Bakterium: Campylobacter jejuni
-""")
-        st.write("Dieser Pfad ist fertig.")
+        zeige_ergebnis(
+            "Bakterium: Campylobacter jejuni",
+            ["Campylobacter jejuni"],
+        )
 
     elif gekruemmt == "Wachstum im alkalischen Medium":
-        st.success("""
-Bakterium: Vibrio cholerae (mikroaerophil)
-""")
-        st.write("Dieser Pfad ist fertig.")
+        zeige_ergebnis(
+            "Bakterium: Vibrio cholerae (mikroaerophil)",
+            ["Vibrio cholerae"],
+        )
 
     elif gekruemmt == "produziert Urease":
-        st.success("""
-Bakterium: Helicobacter pylori (mikroaerophil)
-""")
-        st.write("Dieser Pfad ist fertig.")
+        zeige_ergebnis(
+            "Bakterium: Helicobacter pylori (mikroaerophil)",
+            ["Helicobacter pylori"],
+        )
 
 elif morphologie == "Kokkenbazillen":
-    st.success("""
-Bakterien:
-- Haemophilus influenzae
-- Bordetella pertussis
-- Pasteurella
-- Brucella
-- Francisella tularensis
-- Acinetobacter baumannii
-- Coxiella
-""")
-    st.write("Dieser Pfad ist fertig.")
+    zeige_ergebnis(
+        "Bakterien:\n"
+        "- Haemophilus influenzae\n"
+        "- Bordetella pertussis\n"
+        "- Pasteurella\n"
+        "- Brucella\n"
+        "- Francisella tularensis\n"
+        "- Acinetobacter baumannii\n"
+        "- Coxiella",
+        [
+            "Haemophilus influenzae",
+            "Bordetella pertussis",
+            "Pasteurella",
+            "Brucella abortus",
+            "Francisella tularensis",
+            "Acinetobacter baumannii",
+            "Coxiella",
+        ],
+    )
