@@ -61,3 +61,15 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.write("Hier könnte jetzt dein Menü oder die erste Auswahl kommen.")
+
+**Grampositiv**
+with st.expander("**Listerien**"):
+    st.markdown("""
+**Steckbrief:**
+- Stäbchenförmige Bakterien
+- Wichtigste krankmachende Art: Listeria monocytogenes
+- Beweglich durch Geisseln
+- Vermehren sich auch bei Kühlschranktemperaturen (ca. 4 °C)
+- Sehr widerstandsfähig gegen Umweltbedingungen 
+- Listerien können die Krankheit Listeriose auslösen.
+""")                                                                         
