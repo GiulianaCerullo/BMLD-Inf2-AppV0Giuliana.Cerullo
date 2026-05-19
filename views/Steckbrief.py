@@ -50,6 +50,9 @@ div[data-testid="stRadio"] > label {
 }
 </style>
 """, unsafe_allow_html=True)
+html, body, [class*="css"]  {
+    color: black;
+}
 
 st.markdown("""
 <div class="custom-card">
@@ -60,9 +63,6 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-html, body, [class*="css"]  {
-    color: black;
-}
 
 st.markdown("## Grampositiv")
 with st.expander("**Listerien**"):
