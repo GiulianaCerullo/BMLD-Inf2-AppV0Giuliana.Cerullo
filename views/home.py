@@ -54,6 +54,7 @@ st.write("- Gram-positive Bakterien identifizieren")
 st.write("- Gram-negative Bakterien identifizieren")
 st.write("- Testbeschreibungen zur Identifizierung")
 st.write("- Bakterien lernen")
+st.write("- Steckbriefe")
 
 # ---------- Bilderpfade ----------
 
