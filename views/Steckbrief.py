@@ -48,11 +48,12 @@ div[data-testid="stRadio"] > label {
     font-size: 0.95rem;
     text-decoration: none;
 }
-</style>
-""", unsafe_allow_html=True)
+            
 html, body, [class*="css"]  {
     color: black;
-}
+}           
+</style>
+""", unsafe_allow_html=True)
 
 st.markdown("""
 <div class="custom-card">
