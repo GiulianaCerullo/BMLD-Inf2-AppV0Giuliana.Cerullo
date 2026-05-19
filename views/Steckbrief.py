@@ -65,7 +65,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-st.markdown("## Grampositiv")
+st.markdown("## Grampositive Bakterien")
 with st.expander("**Listerien**"):
     st.markdown("""
 - Stäbchenförmige Bakterien
@@ -159,7 +159,7 @@ with st.expander("**Staphylococcus saprophyticus**"):
 - Novobiocin resistent 
 """)   
 
-with st.expander("**Streptococcus pneumoniae"):
+with st.expander("**Streptococcus pneumoniae**"):
     st.markdown("""
 - Kugelförmig (Kokken), meist paarweise angeordnet (Diplokokken)
 - Pneumokokken
@@ -229,9 +229,9 @@ with st.expander("**Actinomyces**"):
     - Actinomyces israelii 
 """)
     
-st.markdown("##Gramnegativ")
+st.markdown("## Gramnegative Bakterien")
 
-with st.expander("**Neisseria meningitidis"):
+with st.expander("**Neisseria meningitidis**"):
     st.markdown("""
 - Kugelförmige Bakterien (Diplokokken – paarweise)
 - Meningokokken
