@@ -60,7 +60,9 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-st.write("Hier könnte jetzt dein Menü oder die erste Auswahl kommen.")
+html, body, [class*="css"]  {
+    color: black;
+}
 
 st.markdown("## Grampositiv")
 with st.expander("**Listerien**"):
