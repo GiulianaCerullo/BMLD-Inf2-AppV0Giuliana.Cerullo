@@ -62,7 +62,7 @@ st.markdown("""
 
 st.write("Hier könnte jetzt dein Menü oder die erste Auswahl kommen.")
 
-**Grampositiv**
+st.markdown("## Grampositiv")
 with st.expander("**Listerien**"):
     st.markdown("""
 **Steckbrief:**
