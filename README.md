@@ -22,10 +22,25 @@ Eine grosse Herausforderung für Studierende ist die Einteilung von Bakterien in
 - Schnelle Wiederholungen vor Praktika.
 - Flexibles Lernen ohne feste Zeiten.
 
+## 🚀 Nutzungshinweise
+
+1. Öffne die App unter folgendem Link: 👉 [https://bakterienidentifikation.streamlit.app/home]
+2. Wähle auf der Seite den gewünschten Bereich:
+
+- **Gram-positiv** → Gram-positive Bakterien identifizieren
+- **Gram-negativ** → Gram-negative Bakterien identifizieren
+- **Testbeschreibungen** → Nachlesen, wie welcher Test funktioniert und was er aussagt.
+- **Lernen** → Durch verschiedene Fragetypen die Bakterieneinteilung lernen.
+- **Lernhistorie** → Speichert die Ergebnisse aus dem Lernmodus.
+- **Steckbriefe** → Nachlesen, welche Eigenschaften die jeweiligen Bakterien besitzen. 
+
+
 ## 🌟 Besonderheiten
 - Visuelles Lernen mit einer klaren Struktur
 - Lernen in kurzen Einheiten (Microlearning)
 - Lernen jederzeit und überall
+
+
 
 ---
 
