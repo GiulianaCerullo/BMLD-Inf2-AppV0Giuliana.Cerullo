@@ -27,7 +27,8 @@ pg_gram_pos = st.Page("views/Gram_positiv.py", title="Gram-positiv", default=Tru
 pg_gram_neg = st.Page("views/Gram_negativ.py", title="Gram-negativ")
 pg_tests = st.Page("views/Testbeschreibung.py", title="Testbeschreibungen")
 pg_lernen = st.Page("views/Lernen.py", title="Lernen")
+pg_testhistorie = st.Page("views/Testhistorie.py", title="Lernhistorie")
 pg_steckbriefe = st.Page("views/Steckbrief.py", title="Steckbriefe")
 
-pg = st.navigation([pg_home, pg_gram_pos, pg_gram_neg, pg_tests, pg_lernen, pg_steckbriefe])
+pg = st.navigation([pg_home, pg_gram_pos, pg_gram_neg, pg_tests, pg_lernen, pg_testhistorie, pg_steckbriefe])
 pg.run()
