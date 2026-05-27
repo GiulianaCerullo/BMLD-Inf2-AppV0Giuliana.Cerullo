@@ -29,4 +29,4 @@ Wir haben gelernt, wie man eine sinnvolle und intuitiv strukturierte App program
 ### Wie lief die Kommunikation und Rollenverteilung?
  Wir haben uns in der Vierergruppe in einem Whatsappkanal organisiert. Dort haben wir uns abgesprochen wer wann am Projekt arbeitet, damit es zu keinen Überschneidungen kommt. Da wir alle immer gemeinsam in den Übungsstunden waren, haben wir hauptsächlich dort besprochen, wer welche Aufgaben übernimmt. Somit konnten alle Deadlines eingehalten werden und es kam zu keinen Verzögerungen.
 ### Was hat gut funktioniert, was hätte besser laufen können?
- Die Zusammenarbeit hat gut funktioniert. Bei Problemen haben wir uns gegenseitig unterstützt. Bei der Präsentation hätte die Zeitverteilung noch besser abgestimmt werden können, sodass alle Teammitglieder ungefähr gleich lange gesprochen hätten
+ Die Zusammenarbeit hat gut funktioniert. Bei Problemen haben wir uns gegenseitig unterstützt. Bei der Präsentation hätte die Zeitverteilung noch besser abgestimmt werden können, sodass alle Teammitglieder ungefähr gleich lange gesprochen hätten.
