@@ -1,59 +1,62 @@
 import streamlit as st
 
-st.markdown("""
-<style>
-.stApp {
-    background-color: #FFF1DC;
-}
+def lade_css():
+    st.markdown("""
+    <style>
+    .stApp {
+        background-color: #FFF1DC;
+    }
 
-.block-container {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    max-width: 850px;
-}
+    .block-container {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        max-width: 850px;
+    }
 
-h1, h2, h3 {
-    color: #35627a;
-}
+    h1, h2, h3 {
+        color: #35627a;
+    }
 
-div.stButton > button {
-    background-color: #6fa8dc;
-    color: white;
-    border-radius: 12px;
-    border: none;
-    padding: 0.6rem 1rem;
-    font-weight: 600;
-}
+    div.stButton > button {
+        background-color: #6fa8dc;
+        color: white;
+        border-radius: 12px;
+        border: none;
+        padding: 0.6rem 1rem;
+        font-weight: 600;
+    }
 
-div.stButton > button:hover {
-    background-color: #5a92c6;
-    color: white;
-}
+    div.stButton > button:hover {
+        background-color: #5a92c6;
+        color: white;
+    }
 
-div[data-testid="stRadio"] > label {
-    font-weight: 600;
-    color: #35627a;
-}
+    div[data-testid="stRadio"] > label {
+        font-weight: 600;
+        color: #35627a;
+    }
 
-.custom-card {
-    background-color: white;
-    padding: 1.2rem;
-    border-radius: 16px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-    margin-bottom: 1rem;
-}
+    .custom-card {
+        background-color: white;
+        padding: 1.2rem;
+        border-radius: 16px;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+        margin-bottom: 1rem;
+    }
 
-.small-note {
-    color: #C08457;
-    font-size: 0.95rem;
-    text-decoration: none;
-}
-            
-html, body, [class*="css"]  {
-    color: black;
-}           
-</style>
-""", unsafe_allow_html=True)
+    .small-note {
+        color: #C08457;
+        font-size: 0.95rem;
+        text-decoration: none;
+    }
+
+    html, body, [class*="css"]  {
+        color: black;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+lade_css()
 
 st.markdown("""
 <div class="custom-card">
@@ -64,34 +67,39 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-
-st.markdown("## Grampositive Bakterien")
-with st.expander("**Listerien**"):
-    st.markdown("""
+steckbriefe = [
+    {
+        "gruppe": "Grampositive Bakterien",
+        "name": "Listerien",
+        "inhalt": """
 - Stäbchenförmige Bakterien
 - Wichtigste krankmachende Art: Listeria monocytogenes
-- Beweglich durch Geisseln
+- Beweglich durch Geißeln
 - Vermehren sich auch bei Kühlschranktemperaturen (ca. 4 °C)
 - Sehr widerstandsfähig gegen Umweltbedingungen 
 - Listerien können die Krankheit Listeriose auslösen.
-""")
-
-with st.expander("**Bacillus**"):
-    st.markdown("""
+"""
+    },
+    {
+        "gruppe": "Grampositive Bakterien",
+        "name": "Bacillus",
+        "inhalt": """
 - Stäbchenförmige Bakterien
 - Können Sporen bilden
-- Viele Arten beweglich durch Geisseln
+- Viele Arten beweglich durch Geißeln
 - Meist aerob 
 - Wichtige Arten:
-   - Bacillus Subtilis: Meist harmlos, wird in Forschung genutzt
-   - Bacillus cereus: Kann Lebensmittelvergiftungen verursachen                                                                                         
+   - Bacillus subtilis: Meist harmlos, wird in der Forschung genutzt
+   - Bacillus cereus: Kann Lebensmittelvergiftungen verursachen
    - Bacillus anthracis: Erreger von Milzbrand
-""")
-
-with st.expander("**Corynebakterien**"):
-    st.markdown("""
+"""
+    },
+    {
+        "gruppe": "Grampositive Bakterien",
+        "name": "Corynebakterien",
+        "inhalt": """
 - Keulenförmige Stäbchenbakterien
-- Oft unregelmässige Anordnung („V-“ oder „Y-Form“)
+- Oft unregelmäßige Anordnung („V-“ oder „Y-Form“)
 - Unbeweglich
 - Bilden keine Sporen
 - Aerob
@@ -100,218 +108,258 @@ with st.expander("**Corynebakterien**"):
 - Wichtige Arten: 
     - Corynebacterium diphtheriae → verursacht Diphtherie
     - Corynebacterium jeikeium → kann Krankenhausinfektionen auslösen  
-""")
-
-with st.expander("**Clostridien**"):
-    st.markdown("""
+"""
+    },
+    {
+        "gruppe": "Grampositive Bakterien",
+        "name": "Clostridien",
+        "inhalt": """
 - Stäbchenförmige Bakterien
 - Viele Arten leben im Boden oder im Darm von Mensch und Tier
 - Bilden widerstandsfähige Sporen
 - Meist aerob
-- Vorbeugung durch gute Hygiene und Tetanus Impfung                
+- Vorbeugung durch gute Hygiene und Tetanusimpfung                
 - Wichtige Arten:
     - Clostridium tetani: Verursacht Wundstarrkrampf (Tetanus)
     - Clostridium botulinum: Bildet das Botulinumtoxin                                                                                                               
-    - Clostridum difficile: Kann schwere Darminfektionen verursachen
+    - Clostridium difficile: Kann schwere Darminfektionen verursachen
     - Clostridium perfringens: Verursacht Lebensmittelvergiftungen
-""")
-
-with st.expander("**Cutibakterien**"):
-    st.markdown("""
+"""
+    },
+    {
+        "gruppe": "Grampositive Bakterien",
+        "name": "Cutibakterien",
+        "inhalt": """
 - Stäbchenförmige Bakterien
 - Früherer Name: Propionibacterium
 - Gehören zur normalen Hautflora
 - Wachsen bevorzugt ohne Sauerstoff (anaerob)
 - Wichtige Arten
-    - Cutibacterium acnes → beteiligt an Akn  
-""")
-
-with st.expander("**Staphylococcus aureus**"):
-    st.markdown("""
+    - Cutibacterium acnes → beteiligt an Akne  
+"""
+    },
+    {
+        "gruppe": "Grampositive Bakterien",
+        "name": "Staphylococcus aureus",
+        "inhalt": """
 - Kugelförmig (Kokken), traubenförmig angeordnet
 - Katalase positiv
 - Koagulase positiv
-- Betha- Hämolyse
+- Beta-Hämolyse
 - Widerstandsfähig gegen Umwelteinflüsse
 - Bildet oft gelbliche Kolonien („aureus“ = golden)
 - Manche Stämme sind antibiotikaresistent
 - Wichtige Form:
     - MRSA = Methicillin-resistenter Staphylococcus aureus
     → resistent gegen viele Antibiotika
-""")
-
-with st.expander("**Staphylococcus epidermidis**"):
-    st.markdown("""
+"""
+    },
+    {
+        "gruppe": "Grampositive Bakterien",
+        "name": "Staphylococcus epidermidis",
+        "inhalt": """
 - Kugelförmiges Bakterium (Kokken)
 - Katalase positiv
 - Koagulase negativ
-- keine Hämolyse                                               
+- Keine Hämolyse                                               
 - Teil der normalen Hautflora des Menschen                
 - Novobiocinsensitiv
-""")
-
-with st.expander("**Staphylococcus saprophyticus**"):
-    st.markdown("""
+"""
+    },
+    {
+        "gruppe": "Grampositive Bakterien",
+        "name": "Staphylococcus saprophyticus",
+        "inhalt": """
 - Kugelförmig (Kokken), traubenförmig angeordnet
 - Fakultativ pathogen (meist harmlos, kann aber Krankheiten auslösen)
 - Katalase positiv
 - Koagulase negativ
-- Novobiocin resistent 
-""")   
-
-with st.expander("**Streptococcus pneumoniae**"):
-    st.markdown("""
+- Novobiocinresistent 
+"""
+    },
+    {
+        "gruppe": "Grampositive Bakterien",
+        "name": "Streptococcus pneumoniae",
+        "inhalt": """
 - Kugelförmig (Kokken), meist paarweise angeordnet (Diplokokken)
 - Pneumokokken
-- Bakterium mit schützender Kapsel (wichtig für Krankheitsauslösung)-schleimige Kolonien
+- Bakterium mit schützender Kapsel (wichtig für die Krankheitsauslösung) – schleimige Kolonien
 - Opportunistischer Erreger (macht vor allem bei geschwächtem Körper krank)
 - Alpha-Hämolyse 
 - Katalase negativ
-""")
-
-with st.expander("**Streptococcus pyogenes**"):
-    st.markdown("""
+"""
+    },
+    {
+        "gruppe": "Grampositive Bakterien",
+        "name": "Streptococcus pyogenes",
+        "inhalt": """
 - Kugelförmig (Kokken), kettenförmig angeordnet
 - Gehört zur Gruppe A der Streptokokken (A-Streptokokken)
 - Produziert verschiedene Giftstoffe (Toxine)
-- Betha-Hämolyse
+- Beta-Hämolyse
 - Katalase negativ 
-""")
-
-with st.expander("**Streptococcus agalactiae**"):
-    st.markdown("""
+"""
+    },
+    {
+        "gruppe": "Grampositive Bakterien",
+        "name": "Streptococcus agalactiae",
+        "inhalt": """
 - Kugelförmig (Kokken), kettenförmig angeordnet
 - B-Streptokokken (GBS = Group B Streptococcus)
 - Wichtiger Erreger bei Neugeboreneninfektionen
-- Betha-Hämolyse
+- Beta-Hämolyse
 - Katalase negativ
 - CAMP positiv
-""")
- 
-with st.expander("**Streptococcus bovis**"):
-    st.markdown("""
+"""
+    },
+    {
+        "gruppe": "Grampositive Bakterien",
+        "name": "Streptococcus bovis",
+        "inhalt": """
 - Kugelförmiges Bakterium (Kokken)
 - Meist anaerob oder fakultativ anaerob
 - Bilden Ketten aus mehreren Bakterienzellen
 - Teil der normalen Darmflora
-- PYR Wachstum
-- Wachstum in 6.5% Nacl
-""")
-
-with st.expander("**Enterococcus**"):
-    st.markdown("""
+- PYR-Wachstum
+- Wachstum in 6.5 % NaCl
+"""
+    },
+    {
+        "gruppe": "Grampositive Bakterien",
+        "name": "Enterococcus",
+        "inhalt": """
 - Kugelförmige Bakterien (Kokken), meist paarweise oder in kurzen Ketten
 - Sehr widerstandsfähig gegen Austrocknung und Hitze
 - Katalase negativ
-- Wachstum in 6.5% NaCl
+- Wachstum in 6.5 % NaCl
 - Aesculin positiv
 - Wichtige Arten:
     - Enterococcus faecalis
     - Enterococcus faecium
-""")
-
-with st.expander("**Nocardia**"):
-    st.markdown("""
+"""
+    },
+    {
+        "gruppe": "Grampositive Bakterien",
+        "name": "Nocardia",
+        "inhalt": """
 - Verzweigte, fadenförmige Bakterien
 - Obligat aerob
 - Teilweise säurefest
 - Verursachen Nokardiose
 - Verursachen opportunistische Infektionen
-""")
-
-with st.expander("**Actinomyces**"):
-    st.markdown("""
+"""
+    },
+    {
+        "gruppe": "Grampositive Bakterien",
+        "name": "Actinomyces",
+        "inhalt": """
 - Verzweigte, fadenartige Stäbchen (sehen „pilzähnlich“ aus)
 - Anaerob oder mikroaerophil (leben schlecht mit viel Sauerstoff)
 - Nicht säurefest
 - Katalase variabel                
-- Wichtige Art
+- Wichtige Art:
     - Actinomyces israelii 
-""")
-    
-st.markdown("## Gramnegative Bakterien")
-
-with st.expander("**Neisseria meningitidis**"):
-    st.markdown("""
+"""
+    },
+    {
+        "gruppe": "Gramnegative Bakterien",
+        "name": "Neisseria meningitidis",
+        "inhalt": """
 - Kugelförmige Bakterien (Diplokokken – paarweise)
 - Meningokokken
 - Kann schwere, schnell verlaufende Infektionen auslösen
-- Besitzt eine Kapsel (wichtig für Krankheitsauslösung)
+- Besitzt eine Kapsel (wichtig für die Krankheitsauslösung)
 - Aerob
-- Maltosverwerter
+- Maltoseverwerter
 - Wachstum auf GC-Platte                
-""")
-
-with st.expander("**Neisseria gonorrhoeae**"):
-    st.markdown("""
+"""
+    },
+    {
+        "gruppe": "Gramnegative Bakterien",
+        "name": "Neisseria gonorrhoeae",
+        "inhalt": """
 - Bohnenförmige Diplokokken
 - Gonokokken
 - Aerob
 - Oxidase positiv
 - Wachstum auf GC-Platte  
 - Katalase positiv
-""")
-    
-with st.expander("**Moraxella**"):
-    st.markdown("""
+"""
+    },
+    {
+        "gruppe": "Gramnegative Bakterien",
+        "name": "Moraxella",
+        "inhalt": """
 - Kugelförmige Bakterien (Diplokokken, paarweise)
 - Aerob
 - Kein Maltoseverwerter
-- Wichtige Art
+- Wichtige Art:
     - Moraxella catarrhalis
-""")                
-
-with st.expander("**Campylobacter jejuni**"):
-    st.markdown("""
+"""
+    },
+    {
+        "gruppe": "Gramnegative Bakterien",
+        "name": "Campylobacter jejuni",
+        "inhalt": """
 - Gebogene, spiral- oder kommaförmige Stäbchen
 - Einer der häufigsten Erreger von bakteriellen Durchfallerkrankungen
 - Oxidase positiv
-- Beweglich durch Geisseln (schraubenartige Bewegung)
+- Beweglich durch Geißeln (schraubenartige Bewegung)
 - Wächst bevorzugt bei Körpertemperatur (ca. 42 °C)
 - Sehr empfindlich gegenüber Austrocknung und Sauerstoff
-""")
-
-with st.expander("**Vibrio cholerae**"):
-    st.markdown("""
+"""
+    },
+    {
+        "gruppe": "Gramnegative Bakterien",
+        "name": "Vibrio cholerae",
+        "inhalt": """
 - Kommaförmige, gebogene Stäbchen
-- Stark beweglich durch polare Geissel
+- Stark beweglich durch polare Geißel
 - Fakultativ anaerob
 - Oxidase positiv
-- Obligat Pathogen                
+- Obligat pathogen                
 - Verursacht Cholera
-""")
-
-with st.expander("**Helicobacter pylori**"):
-    st.markdown("""
+"""
+    },
+    {
+        "gruppe": "Gramnegative Bakterien",
+        "name": "Helicobacter pylori",
+        "inhalt": """
 - Spiral- bzw. schraubenförmig
 - Kann im sehr sauren Milieu des Magens überleben
 - Bildet das Enzym Urease
 - Oxidase positiv
-""")
-
-with st.expander("**E.coli**"):
-    st.markdown("""
+"""
+    },
+    {
+        "gruppe": "Gramnegative Bakterien",
+        "name": "E. coli",
+        "inhalt": """
 - Stäbchenförmiges Bakterium
 - Häufigster natürlicher Bewohner des menschlichen Darms
 - Einige Stämme sind krankheitserregend
 - Aerob 
 - Schnelle Laktosefermentation 
-""")
-
-with st.expander("**Klebsiella**"):
-    st.markdown("""
+"""
+    },
+    {
+        "gruppe": "Gramnegative Bakterien",
+        "name": "Klebsiella",
+        "inhalt": """
 - Kurze Stäbchen
-- Stark ausgeprägte Kapsel (schleimbildung)
+- Stark ausgeprägte Kapsel (Schleimbildung)
 - Nicht beweglich
 - Fakultativ anaerob
 - Laktosefermentation
 - Opportunisten
 - Wichtigste Art:   
     - Klebsiella pneumoniae
-""")
-
-with st.expander("**Enterobacter**"):
-    st.markdown("""
+"""
+    },
+    {
+        "gruppe": "Gramnegative Bakterien",
+        "name": "Enterobacter",
+        "inhalt": """
 - Stäbchenförmiges Bakterium
 - Häufig in Umwelt und Darm vorkommend, teils Krankenhauskeim
 - Aerob
@@ -319,10 +367,12 @@ with st.expander("**Enterobacter**"):
 - Wichtige Arten:
     - Enterobacter cloacae (medizinisch besonders relevant)
     - Enterobacter aerogenes (heute oft als Klebsiella aerogenes eingeordnet) 
-""")
-
-with st.expander("**Citrobacter**"):
-    st.markdown("""
+"""
+    },
+    {
+        "gruppe": "Gramnegative Bakterien",
+        "name": "Citrobacter",
+        "inhalt": """
 - Stäbchenförmiges Bakterium
 - Kommt häufig im Darm und in der Umwelt vor
 - Opportunistischer Erreger
@@ -331,10 +381,12 @@ with st.expander("**Citrobacter**"):
 - Wichtige Arten:
     - Citrobacter freundii (am häufigsten medizinisch relevant)
     - Citrobacter koseri (besonders bei Neugeborenen wichtig)
-""")
-
-with st.expander("**Serratia**"):
-    st.markdown("""
+"""
+    },
+    {
+        "gruppe": "Gramnegative Bakterien",
+        "name": "Serratia",
+        "inhalt": """
 - Stäbchenförmiges Bakterium
 - Kann rötliche Farbstoffe bilden
 - Wasser und feuchte Umgebungen
@@ -343,146 +395,187 @@ with st.expander("**Serratia**"):
 - Langsame Laktosefermentation
 - Wichtige Art: 
     - Serratia marcescens
-""")
-
-with st.expander("**Pseudomonas aeruginosa**"):
-    st.markdown("""
+"""
+    },
+    {
+        "gruppe": "Gramnegative Bakterien",
+        "name": "Pseudomonas aeruginosa",
+        "inhalt": """
 - Schlanke Stäbchen (Bazillen)
-- Stark beweglich durch polare Geisseln
+- Stark beweglich durch polare Geißeln
 - Flache Kolonien
 - Oxidase positiv
 - Obligat aerob                
-- Keine Laktosefermentation$
-- Lindenbütenduft                
-""")
-
-with st.expander("**Legionella**"):
-    st.markdown("""
+- Keine Laktosefermentation
+- Lindenblütenduft                
+"""
+    },
+    {
+        "gruppe": "Gramnegative Bakterien",
+        "name": "Legionella",
+        "inhalt": """
 - Stäbchenförmiges Bakterium
 - Lebt bevorzugt in warmem Wasser und kann schwere Lungenentzündung verursachen
 - Aerob
 - Keine Laktosefermentation
 - Oxidase positiv
-""")
-
-with st.expander("**Burkholderia**"):
-    st.markdown("""
+"""
+    },
+    {
+        "gruppe": "Gramnegative Bakterien",
+        "name": "Burkholderia",
+        "inhalt": """
 - Stäbchenförmiges Bakterium
 - Umweltbakterien, einige Arten sind wichtige Krankheitserreger
 - Können Biofilme bilden
 - Aerob
 - Keine Laktosefermentation
 - Oxidase positiv
-- Wichtige Arten
+- Wichtige Arten:
     - Burkholderia pseudomallei
     - Burkholderia cepacia (Komplex)
-""")
-    
-with st.expander("**Salmonella enterica**"):
-    st.markdown("""
+"""
+    },
+    {
+        "gruppe": "Gramnegative Bakterien",
+        "name": "Salmonella enterica",
+        "inhalt": """
 - Stäbchen (Bazillen)
 - Beweglich
 - Fakultativ anaerob
 - Keine Laktosefermentation
 - Wächst auf HEKT-Platte schwarz
-- Verursacht häufig Gastroentetitis
-""")
-
-with st.expander("**Proteus**"):
-    st.markdown("""
+- Verursacht häufig Gastroenteritis
+"""
+    },
+    {
+        "gruppe": "Gramnegative Bakterien",
+        "name": "Proteus",
+        "inhalt": """
 - Stäbchenförmiges Bakterium
 - Sehr beweglich („Schwarmbewegung“) und typischer Harnwegskeim
 - Kann Harnstoff spalten (Urease-positiv)
 - Aerob
 - Oxidase negativ                
 - Keine Laktosefermentation
-- Schwefelwasserstoffbildun auf TSI-Agar
-""")
-
-with st.expander("**Shigella**"):
-    st.markdown("""
+- Schwefelwasserstoffbildung auf TSI-Agar
+"""
+    },
+    {
+        "gruppe": "Gramnegative Bakterien",
+        "name": "Shigella",
+        "inhalt": """
 - Stäbchenförmiges Bakterium
 - Sehr infektiös – schon wenige Bakterien reichen für eine Infektion
 - Aerob
 - Oxidase negativ
 - Keine Laktosefermentation
-""")
-
-with st.expander("**Yersinia**"):
-    st.markdown("""
+"""
+    },
+    {
+        "gruppe": "Gramnegative Bakterien",
+        "name": "Yersinia",
+        "inhalt": """
 - Kleine Stäbchen
 - Fakultativ anaerob
-- Wächstum gut bei kühlen Temperaturen                                
+- Wächst gut bei kühlen Temperaturen
 - Unbeweglich
 - Keine Laktosefermentation
 - Oxidase negativ   
 - Wichtige Arten:
     - Yersinia pestis: nicht beweglich 
     - Yersinia enterocolitica: beweglich bei niedrigen Temperaturen                                            
-""")
-    
-with st.expander("**Bacteroides**"):
-    st.markdown("""
+"""
+    },
+    {
+        "gruppe": "Gramnegative Bakterien",
+        "name": "Bacteroides",
+        "inhalt": """
 - Stäbchenförmiges Bakterium
-- Obligate Anaerobier (leben nur ohne Sauerstoff
+- Obligate Anaerobier (leben nur ohne Sauerstoff)
 - Wichtigster Bestandteil der menschlichen Darmflora
-- Wichtige Arten
+- Wichtige Arten:
     - Bacteroides fragilis (medizinisch besonders wichtig)
-""")
-    
-with st.expander("**Haemophilus influenzae**"):
-    st.markdown("""
+"""
+    },
+    {
+        "gruppe": "Gramnegative Bakterien",
+        "name": "Haemophilus influenzae",
+        "inhalt": """
 - Kleine Stäbchen
 - Kapsel
 - Verursachen Meningitis, Epiglottitis, Otitis media
-- Wachstum auf Schoggi-Platte¨
-""")
-
-with st.expander("**Bordetetlla pertussis**"):
-    st.markdown("""
+- Wachstum auf Schoggi-Platte
+"""
+    },
+    {
+        "gruppe": "Gramnegative Bakterien",
+        "name": "Bordetella pertussis",
+        "inhalt": """
 - Kokkoide Stäbchen
 - Obligat aerob
 - Toxinbildung
 - Impfung vorhanden    
-""") 
-
-with st.expander("**Pasteruella multocida**"):
-    st.markdown("""
+"""
+    },
+    {
+        "gruppe": "Gramnegative Bakterien",
+        "name": "Pasteurella multocida",
+        "inhalt": """
 - Kleine Stäbchen
 - Bestandteile der Tierflora
 - Übertragung durch Biss/Kratzer
-- Schnelle lokale Ausbreitung$
-""")
-
-with st.expander("**Brucella**"):
-    st.markdown("""
+- Schnelle lokale Ausbreitung
+"""
+    },
+    {
+        "gruppe": "Gramnegative Bakterien",
+        "name": "Brucella",
+        "inhalt": """
 - Kleine Stäbchen
-- Katalase postitiv
+- Katalase positiv
 - Oxidase positiv
-- Häufigste Laborinfetkion                
+- Häufigste Laborinfektion                
 - Zoonose
-""")
-
-with st.expander("**Francisella tularensis**"):
-    st.markdown("""
+"""
+    },
+    {
+        "gruppe": "Gramnegative Bakterien",
+        "name": "Francisella tularensis",
+        "inhalt": """
 - Sehr kleine Stäbchen
 - Hochinfektiös
 - Übertragung durch Zecken, Tiere
-- Potentziell schwerer Verlauf
-""")
-
-with st.expander("**Acinetobacter baumannii**"):
-    st.markdown("""
+- Potentiell schwerer Verlauf
+"""
+    },
+    {
+        "gruppe": "Gramnegative Bakterien",
+        "name": "Acinetobacter baumannii",
+        "inhalt": """
 - Kokkoide Stäbchen
 - Aerob
 - Non-fermenter
 - Multiresistent
 - Typischer Krankenhauskeim
-""")
-
-with st.expander("**Coxiella burnetii**"):
-    st.markdown("""
+"""
+    },
+    {
+        "gruppe": "Gramnegative Bakterien",
+        "name": "Coxiella burnetii",
+        "inhalt": """
 - Obligat intrazellulär
-- Extrem Widerstandsfähig
+- Extrem widerstandsfähig
 - Verursacht Q-Fieber
-""")                            
+"""
+    }
+]
+
+aktuelle_gruppe = None
+for bakterium in steckbriefe:
+    if bakterium["gruppe"] != aktuelle_gruppe:
+        st.markdown(f"## {bakterium['gruppe']}")
+        aktuelle_gruppe = bakterium["gruppe"]
+
+    with st.expander(f"**{bakterium['name']}**"):
+        st.markdown(bakterium["inhalt"])
