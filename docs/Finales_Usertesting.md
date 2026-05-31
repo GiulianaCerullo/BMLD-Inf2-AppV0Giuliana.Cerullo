@@ -24,7 +24,6 @@ Zusätzlich sollte überprüft werden, ob die App für BMLD-Studierende einen si
 - Bezug zum Thema: Kennt Grundlagen der Bakterienidentifikation aus dem Studium
 - Gerät: Laptop
 - Datum des Tests: 27.05.2026
-- Dauer des Tests: ca. 20 Minuten
 
 ## Testdurchführung
 
