@@ -54,8 +54,6 @@ Während des Tests wurde beobachtet:
 - ob der Lernmodus intuitiv nutzbar ist
 - ob die Steckbriefe schnell gefunden werden
 
-Die Testperson wurde gebeten, während der Nutzung laut zu denken. Dadurch konnten Unsicherheiten, positive Rückmeldungen und Verbesserungsideen direkt notiert werden. Es wurde möglichst wenig geholfen, damit sichtbar wird, ob die App auch ohne Anleitung verstanden wird.
-
 ---
 
 ## 4. Hypothesen
