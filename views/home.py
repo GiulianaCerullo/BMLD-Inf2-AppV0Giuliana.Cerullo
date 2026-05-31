@@ -4,7 +4,7 @@ from PIL import Image
 # !! WICHTIG: Eure Emails müssen in der App erscheinen!!
 import streamlit as st
 
-st.title="Startseite"
+st.title=("Startseite")
 
 # ---------- Styling ----------
 st.markdown("""
